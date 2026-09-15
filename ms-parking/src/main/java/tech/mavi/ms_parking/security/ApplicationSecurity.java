@@ -55,8 +55,8 @@ public class ApplicationSecurity {
                                     customizer ->
                                             customizer
                                                     .requestMatchers(HttpMethod.POST,"/sign-up").permitAll()
-                                                    .requestMatchers(HttpMethod.POST,"/sign-in").permitAll()
                                                     .requestMatchers(HttpMethod.POST,"/activate").permitAll()
+                                                    .requestMatchers(HttpMethod.POST,"/error").permitAll()
                                                     .requestMatchers(HttpMethod.GET,"/search-address").permitAll()
                                                     .requestMatchers(HttpMethod.POST,"/available-spot").permitAll()
                                                     .requestMatchers(HttpMethod.POST, "/prompts/define").permitAll()

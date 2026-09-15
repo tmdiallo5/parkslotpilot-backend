@@ -11,6 +11,7 @@ import tech.mavi.ms_parking.notifications.EmailsServce;
 import tech.mavi.ms_parking.profiles.*;
 import tech.mavi.ms_parking.security.activations.Activation;
 import tech.mavi.ms_parking.security.activations.ActivationsService;
+import tech.mavi.ms_parking.security.service.ValidationsService;
 
 import java.util.Map;
 
@@ -25,15 +26,18 @@ public class AuthentificationService implements UserDetailsService {
     private final RolesRepository rolesRepository;
     private final EmailsServce emailsServce;
     private final ActivationsService activationsService;
+    private final ValidationsService validationsService;
 
 
     public void create(ProfileDTO profileDTO) {
+        validationsService.validateEmail(profileDTO.email());
         Profile profile = this.profileMapper.dtoToEntity(profileDTO);
         String userPassword = profileDTO.password();
         String encodedPassword = passwordEncoder.encode(userPassword);
         profile.setPassword(encodedPassword);
         Role role = this.rolesRepository.findByName("CLIENT");
         profile.setRole(role);
+
 
         profile = this.profileRepository.save(profile);
         Activation activation = this.activationsService.create(profile);
