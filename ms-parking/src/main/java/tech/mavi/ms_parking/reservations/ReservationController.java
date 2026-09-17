@@ -26,6 +26,7 @@ public class ReservationController {
 
 
     @PostMapping(path = "reservation", consumes = APPLICATION_JSON_VALUE )
+    @ResponseStatus(HttpStatus.CREATED)
     public ReservationResponseDto createReservation(@RequestBody ReservationRequestDto reservationDto) {
         return this.reservationService.createReservation(reservationDto);
     }

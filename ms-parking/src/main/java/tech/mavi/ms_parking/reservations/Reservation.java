@@ -1,16 +1,13 @@
 package tech.mavi.ms_parking.reservations;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import tech.mavi.ms_parking.enums.ReservationStatus;
 import tech.mavi.ms_parking.profiles.Profile;
 import tech.mavi.ms_parking.spots.Spot;
 
 import java.time.LocalDateTime;
-
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor

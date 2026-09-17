@@ -1,7 +1,9 @@
 package tech.mavi.ms_parking.reservations;
 
-import java.time.LocalDateTime;
+import lombok.Builder;
 
+import java.time.LocalDateTime;
+@Builder
 public record ReservationRequestDto(
         LocalDateTime startDateTime,
         LocalDateTime endDateTime,
