@@ -11,7 +11,7 @@ import tech.mavi.ms_parking.notifications.EmailsServce;
 import tech.mavi.ms_parking.profiles.*;
 import tech.mavi.ms_parking.security.activations.Activation;
 import tech.mavi.ms_parking.security.activations.ActivationsService;
-import tech.mavi.ms_parking.security.service.ValidationsService;
+import tech.mavi.ms_parking.validation.ValidationsService;
 
 import java.util.Map;
 
